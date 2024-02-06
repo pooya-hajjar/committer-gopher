@@ -1,0 +1,15 @@
+
+name: commitSchedule
+
+on:
+  schedule:
+    - cron: "20 12 * * *"
+
+jobs:
+  autoCommit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: commit & push
+        run: ./auto.sh
+        shell: bash
