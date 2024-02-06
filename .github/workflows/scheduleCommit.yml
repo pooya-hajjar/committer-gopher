@@ -2,8 +2,11 @@
 name: commitSchedule
 
 on:
+  push:
+    branches:
+      - master
   schedule:
-    - cron: "20 12 * * *"
+    - cron: "15 08 * * *"
 
 jobs:
   autoCommit:
@@ -11,5 +14,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: commit & push
-        run: ./auto.sh
+        run: ./auto-commit.sh
         shell: bash
