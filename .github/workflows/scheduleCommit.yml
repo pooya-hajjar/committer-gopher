@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-go@v4
       - name: commit & push
         run: ./auto-commit.sh
         shell: bash
