@@ -3,8 +3,8 @@ name: commitSchedule
 
 on:
   push:
-    branches:
-      - master
+    paths:
+      - '.github/**'
   schedule:
     - cron: "15 08 * * *"
 
