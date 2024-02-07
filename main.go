@@ -23,8 +23,9 @@ func main() {
 	}
 
 	for i := 0; i < *commitAmount; i++ {
+		println(commitAmount)
 		if err := exec.Command("git", "commit", "--allow-empty", "-m", MSG).Run(); err != nil {
-			panic("failed to commit")
+			panic(err)
 		} else {
 			count++
 			progressPercent := float32(count) / float32(*commitAmount) * 100
