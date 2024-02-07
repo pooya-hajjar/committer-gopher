@@ -23,7 +23,7 @@ func main() {
 	}
 
 	for i := 0; i < *commitAmount; i++ {
-		if err := exec.Command("git", "commit", "--allow-empty", "-m", MSG).Run(); err != nil {
+		if err := exec.Command("git", "commit", "--allow-empty", "-m", "'"+MSG+"'").Run(); err != nil {
 			panic(err)
 		} else {
 			count++
