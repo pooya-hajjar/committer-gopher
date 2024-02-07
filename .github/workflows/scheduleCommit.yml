@@ -14,6 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: commit & push
-#        run: echo $((RANDOM % 20)) && ./main --amount $_ --with-push
-        run: git status
+        run: echo $((RANDOM % 20)) && ./main --amount $_ --with-push
+#        run: git status
         shell: bash
