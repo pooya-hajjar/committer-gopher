@@ -24,6 +24,7 @@ func main() {
 
 	for i := 0; i < *commitAmount; i++ {
 		if err := exec.Command("git", "commit", "--allow-empty", "-m", "'"+MSG+"'").Run(); err != nil {
+			println("Failed to commit with error: ")
 			panic(err)
 		} else {
 			count++
