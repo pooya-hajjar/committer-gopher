@@ -17,9 +17,12 @@ func main() {
 	count := 0
 
 	if _, err := os.Stat(".git/"); os.IsNotExist(err) {
-		if err := exec.Command("git", "init").Run(); err != nil {
-			panic("failed to init")
-		}
+		//if err := exec.Command("git", "init").Run(); err != nil {
+		//	panic("failed to init")
+		//}
+
+		exec.Command("git", "config", "--global user.email", "bot-1234@example.com")
+		exec.Command("git", "config", "--global user.name", "Automation-Bot")
 	}
 
 	for i := 0; i < *commitAmount; i++ {
