@@ -16,4 +16,3 @@ jobs:
       - name: commit & push
         run: echo $((RANDOM % 20)) && ./main --amount $_ --with-push
         shell: bash
-
