@@ -22,9 +22,6 @@ func main() {
 		}
 	}
 
-	exec.Command("git", "config", "--global user.email", "bot-1234@example.com")
-	exec.Command("git", "config", "--global user.name", "Automation-Bot")
-
 	for i := 0; i < *commitAmount; i++ {
 		if err := exec.Command("git", "commit", "--allow-empty", "-m", "'"+MSG+"'").Run(); err != nil {
 			panic(err)

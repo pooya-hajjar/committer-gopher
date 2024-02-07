@@ -9,11 +9,18 @@ on:
     - cron: "15 08 * * *"
 
 jobs:
-  autoCommit:
+  configGit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: commit & push
-        run: echo $((RANDOM % 20)) && ./main --amount $_ --with-push
-#        run: git status
-        shell: bash
+      - name: Set git user
+        run: git config user.email "gofer_bot@example.com" && git config user.name "Gopher-BOT"
+
+  autoCommit:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: commit & push
+          run: echo $((RANDOM % 20)) && ./main --amount $_ --with-push
+  #        run: git status
+          shell: bash
