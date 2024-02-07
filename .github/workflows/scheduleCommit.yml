@@ -17,4 +17,3 @@ jobs:
         run: echo $((RANDOM % 20)) && ./main --amount $_ --with-push
 #        run: git status
         shell: bash
-
